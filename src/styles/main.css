@@ -1,0 +1,10 @@
+.overlay {
+    background: rgba(24, 39, 119, 0.4)
+  }
+
+/* Media Queries */
+@media screen and (max-width: 1539px) {
+    .overlay {
+        background: rgba(24, 39, 119, 0.4);
+      }
+    }

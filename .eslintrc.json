@@ -1,0 +1,15 @@
+{
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      { "selector": "variableLike", "format": ["camelCase"] },
+      { "selector": "function", "format": ["camelCase", "PascalCase"] },
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE"]
+      }
+    ]
+  }
+}
