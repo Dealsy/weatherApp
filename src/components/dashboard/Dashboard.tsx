@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { weatherProps, CityProps } from '../../types/types'
 
 import '../../styles/main.css'
+import update from 'immutability-helper'
 
 import clsx from 'clsx'
 import LocalCity from '../local/LocalCity'
@@ -12,6 +13,10 @@ export default function Dashboard() {
   const [loading, isLoading] = useState(true)
   const [localCity, setlocalCity] = useState<weatherProps>()
   const [city, setCity] = useState<CityProps>()
+
+  //@ts-ignore
+  const draggableContent: CityProps[] = city?.list
+
   const [lat, setLat] = useState<number>()
   const [lng, setLng] = useState<number>()
   const [error, setError] = useState(
@@ -114,8 +119,13 @@ export default function Dashboard() {
           {loading ? (
             <div> ...loading! </div>
           ) : (
-            city.list.map((cityData) => (
-              <Cities key={cityData.id} cityData={cityData} />
+            city.list.map((cityData, index) => (
+              <Cities
+                key={cityData.id}
+                cityData={cityData}
+                index={index}
+                draggableContent={draggableContent}
+              />
             ))
           )}
         </div>

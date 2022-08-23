@@ -1,3 +1,6 @@
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+
 import clsx from 'clsx'
 import Dashboard from './components/dashboard/Dashboard'
 
@@ -10,7 +13,9 @@ function App() {
         'text-center bg-no-repeat bg-cover bg-sunny min-h-screen'
       )}
     >
-      <Dashboard />
+      <DndProvider backend={HTML5Backend}>
+        <Dashboard />
+      </DndProvider>
     </div>
   )
 }
