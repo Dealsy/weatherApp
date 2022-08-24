@@ -2,12 +2,12 @@ import type { Identifier, XYCoord } from 'dnd-core'
 import { FC, useState } from 'react'
 import { useRef } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
-import { ItemTypes } from '../../types/itemTypes'
+import { ItemTypes } from '../../../types/itemTypes'
 
 import clsx from 'clsx'
-import Panel from '../reusable_components/Panel'
-import Spinner from '../reusable_components/Spinner'
-import { CityProps } from '../../types/types'
+import Panel from '../../reusable_components/Panel'
+import Spinner from '../../reusable_components/Spinner'
+import { CityProps } from '../../../types/types'
 
 type cityProps = {
   cityData: {
@@ -54,8 +54,6 @@ export default function LocalCity({ cityData, draggableContent }: cityProps) {
     }),
   })
 
-  console.log(hasDropped)
-
   const [{ canDrop, isOver }, drop] = useDrop(() => ({
     accept: ItemTypes.CARD,
     drop: () => ({ name: 'Dustbin' }),
@@ -71,10 +69,9 @@ export default function LocalCity({ cityData, draggableContent }: cityProps) {
 
   const weatherIcon = `http://openweathermap.org/img/wn/${cityData.weather[0].icon}@2x.png`
   const temp = cityData.main.temp.toFixed(0)
-  console.log(weatherIcon)
 
   return (
-    <div ref={drag}>
+    <div ref={drag} className="cursor-pointer">
       <Panel>
         <div ref={drop} className="md:flex md:h-full">
           <div

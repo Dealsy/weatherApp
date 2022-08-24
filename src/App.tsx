@@ -1,22 +1,37 @@
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-
+import { useContext, useEffect, useState } from 'react'
+import { LocalCityContext } from '../src/context/LocalCityContext'
 import clsx from 'clsx'
-import Dashboard from './components/dashboard/Dashboard'
+import Dashboard from './pages/Dashboard'
+import Spinner from './components/reusable_components/Spinner'
 
 function App() {
-  // const backgroundPic = localCity?.weather[0].main.toLowercase()
+  const { error, isLoading, localCity } = useContext(LocalCityContext)
+
+  useEffect(() => {
+    const backgroundPic = localCity?.weather[0].main
+    setWeather(backgroundPic)
+  }, [localCity])
+
+  const [weather, setWeather] = useState<string>('')
+
+  console.log(weather)
+
+  if (!localCity) {
+    return <Spinner />
+  }
 
   return (
-    <div
-      className={clsx(
-        'text-center bg-no-repeat bg-cover bg-sunny min-h-screen'
-      )}
-    >
-      <DndProvider backend={HTML5Backend}>
+    <DndProvider backend={HTML5Backend}>
+      <div
+        className={clsx(
+          `text-center bg-no-repeat bg-${weather} bg-cover min-h-screen`
+        )}
+      >
         <Dashboard />
-      </DndProvider>
-    </div>
+      </div>
+    </DndProvider>
   )
 }
 

@@ -17,4 +17,5 @@ export type CityProps = {
       id: number
     }
   ]
+  cod: number
 }

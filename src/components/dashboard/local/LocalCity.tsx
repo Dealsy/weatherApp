@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import Panel from '../reusable_components/Panel'
-import Spinner from '../reusable_components/Spinner'
+import Panel from '../../reusable_components/Panel'
+import Spinner from '../../reusable_components/Spinner'
 
 type localProps = {
   weatherData: {
