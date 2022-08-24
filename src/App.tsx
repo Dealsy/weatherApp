@@ -2,12 +2,21 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { useContext, useEffect, useState } from 'react'
 import { LocalCityContext } from '../src/context/LocalCityContext'
-import clsx from 'clsx'
+
 import Dashboard from './pages/Dashboard'
 import Spinner from './components/reusable_components/Spinner'
 
 function App() {
-  const { error, isLoading, localCity } = useContext(LocalCityContext)
+  const { localCity } = useContext(LocalCityContext)
+
+  /* 
+  
+  Here we are using useContext to pass in Local City Data,
+  then we check to see if there is a weather condition, if there is,
+  we pass that to a useState and use it to dynamically update the background image,
+  of the Dashboard component.   
+
+  */
 
   useEffect(() => {
     const backgroundPic = localCity?.weather[0].main
@@ -16,8 +25,6 @@ function App() {
 
   const [weather, setWeather] = useState<string>('')
 
-  console.log(weather)
-
   if (!localCity) {
     return <Spinner />
   }
@@ -25,9 +32,10 @@ function App() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div
-        className={clsx(
-          `text-center bg-no-repeat bg-${weather} bg-cover min-h-screen`
-        )}
+        className="text-center bg-no-repeat bg-cover min-h-screen"
+        style={{
+          backgroundImage: `url(/images/${weather}.jpg)`,
+        }}
       >
         <Dashboard />
       </div>

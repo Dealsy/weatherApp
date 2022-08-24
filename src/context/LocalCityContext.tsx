@@ -1,16 +1,22 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
-import { weatherProps } from '../types/types'
 
 import useSWRImmutable from 'swr/immutable'
-import Spinner from '../components/reusable_components/Spinner'
+
+/*
+  This context is used to store the local city data and the error message if the API call fails.
+  The local city data is used to display the local weather data on the dashboard.
+  
+  I make use of SWR to fetch the data from the API. SWR is a React Hooks library for remote data fetching.
+*/
 
 interface Props {
   children?: ReactNode
 }
-// Eslint disabled here because of the naming convention standards, however React requires
-// the naming convention to be PascalCase
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
+// Eslint disabled here because of the naming convention standards, however React requires
+// the naming convention to be PascalCase
 // eslint-disable-next-line
 export const LocalCityContext = createContext<any>(null)
 // eslint-disable-next-line
@@ -23,6 +29,8 @@ export const LocalCityProvider = ({ children }: Props) => {
 
   const [lat, setLat] = useState<number>()
   const [lng, setLng] = useState<number>()
+
+  // The below useEffect is used to get the users GeoLocation, so that the local weather data can be displayed
 
   useEffect(() => {
     const geolocationAPI = navigator.geolocation
@@ -66,8 +74,6 @@ export const LocalCityProvider = ({ children }: Props) => {
     error,
     setError,
     localCity,
-    loading,
-    isLoading,
   }
 
   return (

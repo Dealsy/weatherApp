@@ -21,8 +21,8 @@ export default function LocalCity({ weatherData }: localProps) {
     <Panel>
       <div
         className={clsx(
-          'w-full p-14 flex flex-col border-2 justify-center border-panelBorder overlay',
-          'md:p-8',
+          'w-full p-14 flex flex-col border-2 justify-center border-panelBorder overlay ',
+          'md:p-8 md:rounded-lg',
           'lg: p-8 '
         )}
       >
