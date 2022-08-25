@@ -43,7 +43,13 @@ export default function Dashboard() {
           )}
         </div>
 
-        <h1 className={clsx('my-2 overlay m-auto p-2 rounded-lg', 'md:w-1/4 ')}>
+        <h1
+          className={clsx(
+            'my-2 overlay m-auto p-2 rounded-lg',
+            'md:w-1/4',
+            'sm:w-1/2'
+          )}
+        >
           Australia Capital Cities
         </h1>
         <div
