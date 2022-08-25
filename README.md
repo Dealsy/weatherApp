@@ -18,12 +18,12 @@ You will also see any lint errors in the console.
 
 ### Tech Stack
 
-- React
-- Typescript
-- Tailwind CSS
-- OpenWeather API
-- SWR
-- CLSX
+- [React](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [OpenWeather API](https://openweathermap.org/)
+- [SWR](https://www.npmjs.com/package/swr)
+- [CLSX](https://www.npmjs.com/package/clsx)
 
 ## DEMO
 
