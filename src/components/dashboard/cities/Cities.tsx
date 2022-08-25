@@ -44,7 +44,6 @@ export default function LocalCity({ cityData, draggableContent }: cityProps) {
       const dropResult = monitor.getDropResult<DropResult>()
       if (item && dropResult) {
         const content = [...draggableContent]
-
         setHasDropped(true)
       }
     },
