@@ -1,15 +1,9 @@
 import clsx from 'clsx'
+
+import { localProps } from '../../../types/types'
 import Panel from '../../reusable_components/Panel'
 import Spinner from '../../reusable_components/Spinner'
 
-type localProps = {
-  weatherData: {
-    description: string
-    name: string
-    weather: [{ description: string; icon: string }]
-    main: { temp: number }
-  }
-}
 export default function LocalCity({ weatherData }: localProps) {
   if (!weatherData || !weatherData.weather) {
     return <Spinner />

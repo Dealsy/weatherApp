@@ -1,15 +1,13 @@
-import { useContext } from 'react'
-import { CityProps } from '../types/types'
-import { LocalCityContext } from '../context/LocalCityContext'
-
-import '../styles/main.css'
-
 import clsx from 'clsx'
+import { useContext } from 'react'
 import useSWRImmutable from 'swr/immutable'
 
-import LocalCity from '../components/dashboard/local/LocalCity'
 import Cities from '../components/dashboard/cities/Cities'
+import LocalCity from '../components/dashboard/local/LocalCity'
 import Spinner from '../components/reusable_components/Spinner'
+import { LocalCityContext } from '../context/LocalCityContext'
+import '../styles/main.css'
+import { cityProps } from '../types/types'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -22,10 +20,7 @@ export default function Dashboard() {
   const cititesUrl = `https://api.openweathermap.org/data/2.5/group?id=2158177,2174003,2078025,2153391,2073124,2147714,2172517&units=metric&appid=${apiKey}`
   const url = cititesUrl
   const { data: cityData, error: cityError } = useSWRImmutable(url, fetcher)
-  const city: CityProps = cityData
-
-  //@ts-ignore
-  const draggableContent: CityProps[] = city?.list
+  const city: cityProps = cityData
 
   if (!localCity || !city) {
     return (
@@ -57,13 +52,8 @@ export default function Dashboard() {
             'xl:lg:flex xl:flex-row xl:gap-5 xl:w-3/4 xl:flex-nowrap'
           )}
         >
-          {city.list.map((cityData, index) => (
-            <Cities
-              key={cityData.id}
-              cityData={cityData}
-              index={index}
-              draggableContent={draggableContent}
-            />
+          {city.list.map((cityData) => (
+            <Cities key={cityData.id} cityData={cityData} />
           ))}
           {city.cod === 429 && (
             <div className="text-red-500 bg-red-50 p-2">{error}</div>
