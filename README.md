@@ -3,7 +3,8 @@
 ## Running the app.
 
 You will need to create a .env file in the root of the project and add the following:
-REACT_APP_API_KEY=<YOUR_WEATHER_API_KEY_HERE>
+
+`REACT_APP_API_KEY=<YOUR_WEATHER_API_KEY_HERE>`
 
 You can get your free API key from here: [OpenWeather](https://openweathermap.org/)
 
