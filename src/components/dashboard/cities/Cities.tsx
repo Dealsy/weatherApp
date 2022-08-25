@@ -67,7 +67,7 @@ export default function LocalCity({ cityData, draggableContent }: cityProps) {
     return <Spinner />
   }
 
-  const weatherIcon = `http://openweathermap.org/img/wn/${cityData.weather[0].icon}@2x.png`
+  const weatherIcon = `https://openweathermap.org/img/wn/${cityData.weather[0].icon}@2x.png`
   const temp = cityData.main.temp.toFixed(0)
 
   return (

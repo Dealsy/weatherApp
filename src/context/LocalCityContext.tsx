@@ -16,7 +16,7 @@ interface Props {
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 // Eslint disabled here because of the naming convention standards, however React requires
-// the naming convention to be PascalCase
+// the naming convention to be PascalCase for components and Contexts.
 // eslint-disable-next-line
 export const LocalCityContext = createContext<any>(null)
 // eslint-disable-next-line
@@ -26,7 +26,6 @@ export const LocalCityProvider = ({ children }: Props) => {
   const [error, setError] = useState(
     'Something went wrong!! Please try again later'
   )
-
   const [lat, setLat] = useState<number>()
   const [lng, setLng] = useState<number>()
 
