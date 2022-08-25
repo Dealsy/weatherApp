@@ -16,10 +16,12 @@ export default function Dashboard() {
 
   // Grabbing data for the cities component with SWR.
 
+  const cityIds = ['2158177,2174003,2078025,2153391,2073124,2147714,2172517']
+
   const apiKey = process.env.REACT_APP_API_KEY
-  const cititesUrl = `https://api.openweathermap.org/data/2.5/group?id=2158177,2174003,2078025,2153391,2073124,2147714,2172517&units=metric&appid=${apiKey}`
+  const cititesUrl = `https://api.openweathermap.org/data/2.5/group?id=${cityIds}&units=metric&appid=${apiKey}`
   const url = cititesUrl
-  const { data: cityData, error: cityError } = useSWRImmutable(url, fetcher)
+  const { data: cityData } = useSWRImmutable(url, fetcher)
   const city: cityProps = cityData
 
   if (!localCity || !city) {

@@ -65,7 +65,7 @@ export const LocalCityProvider = ({ children }: Props) => {
   const apiKey = process.env.REACT_APP_API_KEY
   const localUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`
   const url = localUrl
-  const { data: cityData, error: cityError } = useSWRImmutable(url, fetcher)
+  const { data: cityData } = useSWRImmutable(url, fetcher)
   const localCity = cityData
 
   const value = {
