@@ -38,3 +38,5 @@ When placing the site on a hosting platform, you will need to add your weather A
 ## Additional Information
 
 This site requires you to allow location access in order to get the weather for your current location.
+
+This site makes user of the `Inter` font. You can download it [here](https://rsms.me/inter/)
