@@ -54,10 +54,10 @@ export default function Dashboard() {
         </h1>
         <div
           className={clsx(
-            'w-3/4 flex flex-col justify-center m-auto mt-2 gap-2 mb-24 ',
-            'md:flex md:flex-row md:gap-5 md:w-3/4',
-            'lg:flex lg:flex-row lg:gap-5 lg:w-3/4 flex-wrap',
-            'xl:lg:flex xl:flex-row xl:gap-5 xl:w-3/4 xl:flex-nowrap'
+            'w-3/4 flex flex-col justify-center m-auto mt-2 gap-2 mb-24  ',
+            'md:flex md:flex-row md:gap-5',
+            'lg:flex lg:flex-row lg:gap-5 flex-wrap',
+            'xl:lg:flex xl:flex-row xl:gap-5  xl:flex-nowrap'
           )}
         >
           {city.list.map((cityData) => (

@@ -14,11 +14,11 @@ export default function LocalCity({ cityData }: cityDataProps) {
 
   return (
     <Panel>
-      <div className="md:flex md:h-full">
+      <div className="md:flex md:h-full ">
         <div
           className={clsx(
             'p-3 text-white border-2 border-panelBorder overlay hover:bg-panelBlue',
-            'md:w-60 md:p-8'
+            'md:p-8'
           )}
         >
           <div className="md:flex md:flex-col md:h-32">
