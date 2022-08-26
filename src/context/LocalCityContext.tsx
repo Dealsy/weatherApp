@@ -38,8 +38,8 @@ export const LocalCityProvider = ({ children }: Props) => {
       } else {
         geolocationAPI.getCurrentPosition(
           (position) => {
-            isLoading(true)
             const { coords } = position
+            isLoading(true)
             setLat(coords.latitude)
             setLng(coords.longitude)
           },
@@ -48,16 +48,6 @@ export const LocalCityProvider = ({ children }: Props) => {
           }
         )
       }
-    }
-
-    if (!geolocationAPI) {
-      setError('Geolocation API is not available in your browser!')
-    } else {
-      geolocationAPI.getCurrentPosition((position) => {
-        const { coords } = position
-        setLat(coords.latitude)
-        setLng(coords.longitude)
-      })
     }
     getUserCoordinates()
   }, [])
