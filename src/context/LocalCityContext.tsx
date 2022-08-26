@@ -39,7 +39,6 @@ export const LocalCityProvider = ({ children }: Props) => {
         geolocationAPI.getCurrentPosition(
           (position) => {
             const { coords } = position
-            isLoading(true)
             setLat(coords.latitude)
             setLng(coords.longitude)
           },

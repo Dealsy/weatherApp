@@ -46,7 +46,7 @@ export default function Dashboard() {
         <h1
           className={clsx(
             'my-2 overlay m-auto p-2 rounded-lg',
-            'md:w-1/4',
+            'md:w-2/6',
             'sm:w-1/2'
           )}
         >
