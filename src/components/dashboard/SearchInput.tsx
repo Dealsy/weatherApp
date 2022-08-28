@@ -19,7 +19,7 @@ export default function SearchInput({
         <label
           className={clsx(
             'text-lg font-bold text-gray-000 mt-5 ml-14 flex justify-start',
-            'md:text-sm'
+            'md:ml-1 md:text-sm'
           )}
         >
           Search for a city
