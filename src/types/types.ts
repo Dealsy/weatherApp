@@ -1,6 +1,9 @@
 export type localProps = {
   weatherData: mainProps
 }
+export type searchProps = {
+  searchData: mainProps
+}
 
 export type cityProps = {
   list: mainProps[]
