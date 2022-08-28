@@ -16,7 +16,12 @@ export default function SearchInput({
   return (
     <div className="flex justify-center">
       <form onSubmit={handleSubmit}>
-        <label className="text-sm font-bold text-gray-800 mt-5 ml-1 flex justify-start">
+        <label
+          className={clsx(
+            'text-lg font-bold text-gray-000 mt-5 ml-14 flex justify-start',
+            'md:text-sm'
+          )}
+        >
           Search for a city
         </label>
         <input
