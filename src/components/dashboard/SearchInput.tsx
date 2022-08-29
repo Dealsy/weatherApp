@@ -18,8 +18,8 @@ export default function SearchInput({
       <form onSubmit={handleSubmit}>
         <label
           className={clsx(
-            'text-lg font-bold text-gray-000 mt-5 ml-14 flex justify-start',
-            'md:ml-1 md:text-sm'
+            'text-sm text-white p-2 font-bold text-gray-000 mt-5 flex justify-start overlay',
+            'md:ml-0.5 md:w-1/4 md:rounded'
           )}
         >
           Search for a city

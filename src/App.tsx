@@ -1,10 +1,10 @@
+import { useContext, useEffect, useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { useContext, useEffect, useState } from 'react'
-import { LocalCityContext } from '../src/context/LocalCityContext'
 
-import Dashboard from './pages/Dashboard'
+import { LocalCityContext } from '../src/context/LocalCityContext'
 import Spinner from './components/reusable_components/Spinner'
+import Dashboard from './pages/Dashboard'
 
 function App() {
   const { localCity } = useContext(LocalCityContext)
@@ -34,7 +34,7 @@ function App() {
       <div
         className="text-center bg-no-repeat bg-cover min-h-screen"
         style={{
-          backgroundImage: `url(/images/${weather}.jpg)`,
+          backgroundImage: `url(/images/Drizzle.jpg)`,
         }}
       >
         <Dashboard />
