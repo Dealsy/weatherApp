@@ -9,8 +9,8 @@ export default function Panel({ children }: PanelProps) {
   return (
     <div
       className={clsx(
-        'text-white bg-panelBlue opacity-70 ',
-        'shadow border-1 border-panelBorder mb-1'
+        'text-white bg-panelBlue opacity-70',
+        'shadow border-1 border-panelBorder'
       )}
     >
       {children}

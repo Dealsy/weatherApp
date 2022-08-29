@@ -15,14 +15,14 @@ export default function LocalCity({ weatherData }: localProps) {
     <Panel>
       <div
         className={clsx(
-          'w-full p-14 flex flex-col border-2 justify-center border-panelBorder overlay ',
-          'md:p-8 md:rounded-lg',
-          'lg: p-8 '
+          'w-full p-14 flex flex-col border-2 justify-center border-panelBorder overlay h-96 ',
+          'md:rounded-lg'
         )}
       >
+        <h1 className={clsx('m-autorounded-lg w-full mt-5')}>Your Location</h1>
         <h2>{weatherData.weather[0].description}</h2>
-        <span className="text-7xl m-5 font-semibold">{temp} °C</span>
-        <h1>{weatherData.name}</h1>
+        <span className="text-6xl font-semibold">{temp} °C</span>
+        <h2 className="mt-5">{weatherData.name}</h2>
         <img className="w-32 m-auto" src={weatherIcon} alt="weather_icon" />
       </div>
     </Panel>

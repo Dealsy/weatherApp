@@ -2,7 +2,6 @@ import clsx from 'clsx'
 
 import { searchProps } from '../../../types/types'
 import Panel from '../../reusable_components/Panel'
-import Spinner from '../../reusable_components/Spinner'
 
 export default function GlobalSearch({ searchData }: searchProps) {
   if (!searchData || !searchData.weather) {
@@ -19,11 +18,13 @@ export default function GlobalSearch({ searchData }: searchProps) {
     <Panel>
       <div
         className={clsx(
-          'w-full p-14 flex flex-col border-2 justify-center border-panelBorder overlay ',
-          'md:p-8 md:rounded-lg',
-          'lg: p-8 '
+          'w-full p-14 flex flex-col border-2 justify-center border-panelBorder overlay h-96 ',
+          'md:rounded-lg'
         )}
       >
+        <h1 className={clsx('my-2  m-auto p-2 rounded-lg mt-5 w-full')}>
+          {searchData.name}
+        </h1>
         <h2>{searchData.weather[0].description}</h2>
         <span className="text-7xl m-5 font-semibold">{temp} °C</span>
         <img className="w-32 m-auto" src={weatherIcon} alt="weather_icon" />

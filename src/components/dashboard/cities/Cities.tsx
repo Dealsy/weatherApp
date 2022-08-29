@@ -18,7 +18,7 @@ export default function LocalCity({ cityData }: cityDataProps) {
         <div
           className={clsx(
             'p-3 text-white border-2 border-panelBorder overlay hover:bg-panelBlue',
-            'md:p-8'
+            'md:p-8 md:w-60 '
           )}
         >
           <div className="md:flex md:flex-col md:h-32">

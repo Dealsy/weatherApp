@@ -15,18 +15,10 @@ export default function SearchInput({
 }: searchProps) {
   return (
     <div className="flex justify-center">
-      <form onSubmit={handleSubmit}>
-        <label
-          className={clsx(
-            'text-sm text-white p-2 font-bold text-gray-000 mt-5 flex justify-start overlay',
-            'md:ml-0.5 md:w-1/4 md:rounded'
-          )}
-        >
-          Search for a city
-        </label>
+      <form onSubmit={handleSubmit} className="mt-5">
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search for a city"
           className={clsx('p-2 rounded-l-lg', 'md:w-102')}
           onChange={handleChange}
         />
