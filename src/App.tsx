@@ -34,7 +34,7 @@ function App() {
       <div
         className="text-center bg-no-repeat bg-cover min-h-screen"
         style={{
-          backgroundImage: `url(/images/Drizzle.jpg)`,
+          backgroundImage: `url(/images/${weather}.jpg)`,
         }}
       >
         <Dashboard />
